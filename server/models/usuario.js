@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-//mongoose.set('useCreateIndex', true)
-//mongoose.set('useFindAndModify', false);
+
 
 const uniqueValidator = require('mongoose-unique-validator')
 let rolesValidos={
