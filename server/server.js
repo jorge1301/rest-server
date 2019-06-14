@@ -1,15 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require('body-parser');
 
-if (process.env.NODE_ENV !== 'development') {
-    require('dotenv').config();
-    
-}else{
-    require('dotenv').config();
+if (process.env.NODE_ENV == 'development') {
     process.env.MONGODB_URI = process.env.MONGODB_URI_LOCAL
-       
+    process.env.SEED = process.env.SEED_LOCAL
 }
 
 //Middlewares
@@ -19,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 //Llamado de routes
-app.use(require('./routes/usuario'));
+app.use(require('./routes/index'));
 
 
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useCreateIndex: true, useFindAndModify:false},(err) =>{
