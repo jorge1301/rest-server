@@ -19,7 +19,7 @@ let verificaToken = (req,res,next) =>{
         next();
 
     });
-    console.log(token);
+    
 };
 
 // ====================
@@ -39,7 +39,7 @@ let verificaAdmin_Role = (req, res, next) => {
             }
         })
     }   
-    console.log(usuario);
+    
 };
 
 module.exports = {
